@@ -1,0 +1,44 @@
+<!-- <p>login works!</p>
+<a *ngIf="!isLoggedIn">Click here to login.</a>
+<a *ngIf="isLoggedIn">Logout</a>
+
+ -->
+
+<div class="container">
+  <h1 class="row pt-3 pb-3">LOGIN</h1>
+  <div class="row w-75">
+    <form class="w-100" (ngSubmit)="login()" [formGroup]="form">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          formControlName="email"
+          appHoverFocus="#e3f1ff"
+          autocomplete="off"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Password"
+          formControlName="password"
+          appHoverFocus="#e3f1ff"
+        />
+      </div>
+      <input
+        type="submit"
+        class="btn btn-primary"
+        id="submit"
+        [disabled]="!form.valid"
+        value="Submit"
+      />
+    </form>
+  </div>
+</div>
